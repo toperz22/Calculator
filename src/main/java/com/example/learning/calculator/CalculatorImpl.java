@@ -22,5 +22,10 @@ public class CalculatorImpl implements Calculator{
         return a / b;
     }
 
+    @Override
+    public int modulo(int a, int b) {
+        return a % b;
+    }
+
 
 }

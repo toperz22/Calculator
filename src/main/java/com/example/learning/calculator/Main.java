@@ -38,33 +38,44 @@ public class Main {
 
     private static void printInfo() {
         System.out.println("*******************");
-        System.out.println("Choose operation: 1(+), 2(-), 3(*), 4(/) other number to exit");
+        System.out.println("Choose operation: 1(+), 2(-), 3(*), 4(/), 5(%) other number to exit");
         System.out.println("Enter");
     }
 
     private static void additionOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
         int result = calculator.addition(twoNumbersFromInput[0],twoNumbersFromInput[1]);
-        System.out.println(twoNumbersFromInput[0] + " + " + twoNumbersFromInput[1] + " = " + result);
+        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "+", result);
     }
 
     private static void substractionOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
         int result = calculator.subtraction(twoNumbersFromInput[0],twoNumbersFromInput[1]);
-        System.out.println(twoNumbersFromInput[0] + " - " + twoNumbersFromInput[1] + " = " + result);
+        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "-", result);
     }
 
     private static void multiplicationOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
         int result = calculator.multiplication(twoNumbersFromInput[0],twoNumbersFromInput[1]);
-        System.out.println(twoNumbersFromInput[0] + " * " + twoNumbersFromInput[1] + " = " + result);
+        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "*", result);
     }
 
     private static void divisionOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
         int result = calculator.division(twoNumbersFromInput[0],twoNumbersFromInput[1]);
-        System.out.println(twoNumbersFromInput[0] + " / " + twoNumbersFromInput[1] + " = " + result);
+        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "/", result);
     }
+
+    private static void moduloOperation(Scanner scanner, Calculator calculator) {
+        int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
+        int result = calculator.modulo(twoNumbersFromInput[0],twoNumbersFromInput[1]);
+        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "%", result);
+    }
+
+    private static void printResult(int firstNumber, int secondNumber, String operator, int result) {
+        System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + result);
+    }
+
 
     private static int[] getTwoNumbersFromInput(Scanner scanner) {
         System.out.println("Enter first number");
