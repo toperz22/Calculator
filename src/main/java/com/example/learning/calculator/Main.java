@@ -28,6 +28,9 @@ public class Main {
             case 4:
                 divisionOperation(scanner, calculator);
                 break;
+            case 5:
+                moduloOperation(scanner,calculator);
+                break;
             default:
                 exit = true;
         }
