@@ -62,8 +62,13 @@ public class Main {
 
     private static void divisionOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
-        int result = calculator.division(twoNumbersFromInput[0],twoNumbersFromInput[1]);
-        printResult(twoNumbersFromInput[0],twoNumbersFromInput[1], "/", result);
+        if (twoNumbersFromInput[1] == 0) {
+            System.out.println("Nie można dzielić przez zero");
+        }
+        else {
+            int result = calculator.division(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+            printResult(twoNumbersFromInput[0], twoNumbersFromInput[1], "/", result);
+        }
     }
 
     private static void moduloOperation(Scanner scanner, Calculator calculator) {
