@@ -30,6 +30,7 @@ public class Main {
                 break;
             default:
                 exit = true;
+
         }
     }
     while (!exit);
@@ -37,7 +38,7 @@ public class Main {
     }
 
     private static void printInfo() {
-        System.out.println("*******************");
+        System.out.println("********************");
         System.out.println("Choose operation: 1(+), 2(-), 3(*), 4(/), 5(%) other number to exit");
         System.out.println("Enter");
     }
